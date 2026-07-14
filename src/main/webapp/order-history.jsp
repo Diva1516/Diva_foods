@@ -268,6 +268,10 @@
                             agentName = agent.getUserName();
                         }
                     }
+                    
+                    long orderTimeMs = order.getOrderDate() != null ? order.getOrderDate().getTime() : System.currentTimeMillis();
+                    long elapsedMs = System.currentTimeMillis() - orderTimeMs;
+                    boolean isPast15Mins = elapsedMs > 15 * 60 * 1000;
         %>
                     <div class="order-card animate-fade-in animate-delay-<%= (i % 5) + 1 %>">
                         <div class="order-card-header">
