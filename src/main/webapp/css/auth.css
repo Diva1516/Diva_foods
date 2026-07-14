@@ -1,0 +1,224 @@
+/* ============================================================
+   DIVA FOODS - Authentication (Login & Register) Stylesheet
+   ============================================================ */
+
+.auth-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+    background: transparent;
+    perspective: 1000px;
+}
+
+/* 3D Background Image */
+.auth-bg-image {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: url('../images/food_3d_bg.png') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    animation: backgroundMove 40s infinite alternate linear;
+}
+
+@keyframes backgroundMove {
+    0% { transform: scale(1) translate(0, 0) rotate(0deg); }
+    33% { transform: scale(1.05) translate(-2%, 2%) rotate(1deg); }
+    66% { transform: scale(1.1) translate(2%, -2%) rotate(-1deg); }
+    100% { transform: scale(1.05) translate(-1%, -1%) rotate(0.5deg); }
+}
+
+@keyframes slideUpCard {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.auth-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 440px;
+    padding: 48px 40px;
+    background: rgba(20, 20, 25, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 107, 53, 0.8);
+    border-radius: 28px;
+    box-shadow: 0 0 60px rgba(255, 107, 53, 0.6), 0 0 100px rgba(255, 107, 53, 0.3) inset, 0 20px 40px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    animation: slideUpCard 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.auth-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 80px rgba(255, 107, 53, 0.9), 0 0 120px rgba(255, 107, 53, 0.5) inset, 0 30px 50px rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 107, 53, 1);
+}
+
+.auth-card .auth-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.auth-card .auth-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.auth-card .auth-header p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.3), 0 0 15px rgba(255, 107, 53, 0.5) inset;
+    transform: translateY(-2px);
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+.form-group .checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.form-group .checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.form-group .forgot-link {
+    color: var(--accent-light);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.form-group .forgot-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 107, 53, 0.8);
+}
+
+.auth-card button[type="submit"] {
+    margin-top: 15px;
+    padding: 18px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.auth-card button[type="submit"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 107, 53, 0.6);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.auth-footer a {
+    color: var(--accent-light);
+    font-weight: 800;
+    margin-left: 6px;
+    transition: all 0.3s;
+}
+
+.auth-footer a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 107, 53, 0.8);
+}
+
+/* ---------- CONDITIONAL FORM FIELDS ---------- */
+.form-group.hidden-field {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.form-group.visible-field {
+    display: block;
+    opacity: 1;
+    max-height: 250px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 36px 24px;
+        border-radius: 20px;
+    }
+}

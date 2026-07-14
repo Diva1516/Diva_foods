@@ -1,0 +1,210 @@
+/* ============================================================
+   DIVA FOODS - Interactive Cart Checkout Stylesheet
+   ============================================================ */
+
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 32px;
+    align-items: start;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.cart-item:hover {
+    background: var(--bg-card-hover);
+}
+
+.cart-item .item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cart-item .item-details {
+    flex: 1;
+}
+
+.cart-item .item-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.cart-item .item-restaurant {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.cart-item .item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.quantity-control button {
+    width: 36px;
+    height: 36px;
+    background: var(--bg-glass);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.quantity-control button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.quantity-control .qty-value {
+    width: 44px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: var(--bg-input);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.cart-item .item-total {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent-light);
+}
+
+.cart-item .remove-btn {
+    background: none;
+    color: var(--danger);
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+.cart-item .remove-btn:hover {
+    background: var(--danger-bg);
+}
+
+/* ---------- CART SUMMARY ---------- */
+.cart-summary {
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.cart-summary h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.summary-row .label {
+    color: var(--text-secondary);
+}
+
+.summary-row.total {
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.summary-row.total .value {
+    color: var(--accent-light);
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 80px 24px;
+}
+
+.cart-empty .empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.cart-empty h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.cart-empty p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-item {
+        flex-direction: column;
+    }
+
+    .cart-item .item-image {
+        width: 100%;
+        height: 160px;
+    }
+}

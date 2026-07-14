@@ -1,0 +1,58 @@
+/* Restaurant Owner Dashboard Specific Stylesheet */
+
+.owner-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: calc(100vh - 120px);
+}
+
+.owner-sidebar {
+    background: rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.owner-sidebar h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.owner-sidebar a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.owner-sidebar a:hover, .owner-sidebar a.active {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.owner-main {
+    padding: 32px;
+}
+
+/* Forms for Menu Management */
+.menu-form-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.menu-form-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}

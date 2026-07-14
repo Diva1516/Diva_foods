@@ -1,0 +1,187 @@
+/* ============================================================
+   DIVA FOODS - Secure Checkout Payment Stylesheet
+   ============================================================ */
+
+.payment-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 32px;
+    align-items: start;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.payment-method {
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.payment-method:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+}
+
+.payment-method.selected {
+    border-color: var(--accent);
+    background: rgba(255, 107, 53, 0.06);
+    box-shadow: 0 0 0 1px var(--accent), var(--shadow-glow);
+}
+
+.payment-method .method-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--bg-glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.payment-method .method-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.payment-method .method-info p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ---------- CART SUMMARY STICKY ---------- */
+.cart-summary {
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    padding: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.cart-summary h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.summary-row .label {
+    color: var(--text-secondary);
+}
+
+.summary-row.total {
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.summary-row.total .value {
+    color: var(--accent-light);
+}
+
+/* ---------- ORDER CONFIRMATION RECEIPT ---------- */
+.confirmation-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--nav-height) + 40px) 24px 40px;
+}
+
+.confirmation-card {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    padding: 48px 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+}
+
+.confirmation-card .success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: var(--success-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    animation: scaleIn 0.5s ease;
+}
+
+.confirmation-card h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--success);
+}
+
+.confirmation-card .order-id {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.confirmation-card .order-details {
+    text-align: left;
+    padding: 24px;
+    background: var(--bg-glass);
+    border-radius: var(--radius-md);
+    margin-bottom: 28px;
+}
+
+.confirmation-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.confirmation-card .detail-row:last-child {
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent-light);
+}
+
+.confirmation-card .detail-row .label {
+    color: var(--text-secondary);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+}

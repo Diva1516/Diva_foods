@@ -1,0 +1,237 @@
+/* ============================================================
+   DIVA FOODS - Landing Page (Index) Stylesheet
+   ============================================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: var(--nav-height);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.12); /* Zooms in slightly to push AI watermarks off the screen */
+}
+
+/* Removed dark hero background overlay so video is completely clear */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    padding: 40px 24px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    margin-bottom: 24px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
+    color: #ffffff !important;
+}
+
+.hero-title .highlight {
+    color: #ffffff !important;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease 0.4s both;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    font-weight: 500;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    margin-top: 60px;
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-stat .stat-label {
+    font-size: 0.85rem;
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* ---------- STEPS CARD ---------- */
+.section {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 40px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.step-card .step-number {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.step-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-stats {
+        gap: 24px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-stat .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------- ANIMATED BACKGROUND ---------- */
+.hero-swoosh {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.8;
+    pointer-events: none;
+}
+html[data-theme='dark'] .hero-swoosh {
+    opacity: 0.2; /* Dims swoosh in dark mode */
+}
+
+.floating-food {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.12));
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+html[data-theme='dark'] .floating-food {
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4));
+}
+
+@keyframes floatUpDown {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-25px) rotate(5deg); }
+}
+
+@keyframes floatRotate {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-15px) rotate(-8deg); }
+}
+
+.ff-1 { font-size: 110px; top: 10%; left: 5%; animation: floatUpDown 5s infinite alternate; }
+.ff-2 { font-size: 140px; bottom: 5%; right: 5%; animation: floatRotate 6s infinite alternate; }
+.ff-3 { font-size: 90px; top: 15%; right: 8%; animation: floatUpDown 5.5s infinite alternate; }
+.ff-4 { font-size: 120px; bottom: 10%; left: 8%; animation: floatRotate 6.5s infinite alternate; }
+.ff-5 { font-size: 60px; top: 50%; left: 20%; animation: floatUpDown 4s infinite alternate; filter: blur(2px); opacity: 0.8;}
+.ff-6 { font-size: 50px; top: 45%; right: 20%; animation: floatRotate 4.5s infinite alternate; filter: blur(2px); opacity: 0.8;}
