@@ -36,7 +36,9 @@
                 if (cart == null || cart.isEmpty()) {
             %>
                 <div class="cart-empty animate-fade-in">
-                    <div class="empty-icon">🛒</div>
+                    <div class="empty-icon" style="color: var(--accent);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    </div>
                     <h2>Your Cart is Empty</h2>
                     <p>You haven't added any items to your cart yet. Browse our top kitchens to order!</p>
                     <a href="callRestaurantServlet" class="btn btn-primary">Discover Restaurants</a>
@@ -115,7 +117,7 @@
                         <%
                             if (user == null) {
                         %>
-                            <a href="login.jsp?redirect=cart.jsp" class="btn btn-primary btn-block" style="margin-top: 24px; text-decoration: none; text-align: center; display: block;">
+                            <a href="login.jsp?redirect=payment.jsp" class="btn btn-primary btn-block" style="margin-top: 24px; text-decoration: none; text-align: center; display: block;">
                                 Login to Place Order
                             </a>
                         <%

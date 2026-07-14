@@ -22,11 +22,16 @@
     </script>
 </head>
 <body>
-    <main class="auth-page">
-        <!-- 3D Preview Image Background -->
-        <div class="auth-bg-image"></div>
+    <main class="auth-page white-theme">
+        <!-- Animated White Background with Floating Foods -->
+        <div class="auth-bg-white">
+            <img src="images/burger.png" alt="Burger" class="float-food food-1">
+            <img src="images/french_fries.png" alt="Fries" class="float-food food-2">
+            <img src="images/coke.png" alt="Coke" class="float-food food-3">
+            <img src="images/pizza.png" alt="Pizza" class="float-food food-4" onerror="this.src='images/dosa.png'">
+        </div>
 
-        <div class="auth-card">
+        <div class="auth-card glass-light">
             <div class="auth-header">
                 <h1 class="brand-text" style="font-size: 2.5rem; margin-bottom: 15px; display: inline-block;">Diva Foods</h1>
                 <p>Login to your account</p>

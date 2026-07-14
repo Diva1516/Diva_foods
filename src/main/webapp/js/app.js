@@ -110,10 +110,11 @@ function injectNavigation() {
                     ${user && user.role === 'delivery' ? `<a href="${prefix}delivery/dashboard" class="${isActivePage('dashboard.jsp')}">Delivery Dashboard</a>` : ''}
                 </div>
                 <div class="nav-actions">
-                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">☀️</button>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">${sunSvg}</button>
                     ${(!user || user.role === 'customer') ? `
-                        <a href="${prefix}cart.jsp" class="nav-cart" title="Shopping Cart">
-                            🛒 <span class="cart-count">${cartCount}</span>
+                        <a href="${prefix}cart.jsp" class="nav-cart" title="Shopping Cart" style="display: flex; align-items: center; gap: 4px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> 
+                            <span class="cart-count">${cartCount}</span>
                         </a>
                     ` : ''}
                     <div class="profile-dropdown-container">
@@ -463,7 +464,7 @@ function initSorting() {
 }
 
 // Initialize all features on DOM Load
-document.addEventListener("DOMContentLoaded", () => {
+function initAll() {
     initTheme();
     initPageLoader();
     injectNavigation();
@@ -474,10 +475,19 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollReveal();
     initSearchSuggestions();
     initSorting();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener("DOMContentLoaded", initAll);
+} else {
+    initAll();
+}
 
 // Cache restore reset (bfcache back-button fix)
 window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        initAll();
+    }
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.disabled = false;
         btn.textContent = 'Add to Cart';
