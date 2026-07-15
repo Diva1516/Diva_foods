@@ -662,6 +662,12 @@ main {
 
 .footer-col ul li a:hover {
     color: var(--accent);
+    text-shadow: 0 0 12px var(--accent), 0 0 20px var(--accent);
+}
+
+/* Make all other links in footer glow on hover too */
+.footer a:hover {
+    text-shadow: 0 0 12px var(--accent);
 }
 
 .footer-bottom {
