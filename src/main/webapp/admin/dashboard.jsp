@@ -84,7 +84,7 @@
                 <div class="table-card" style="margin-bottom: 0;">
                     <h2 style="margin-top: 0; margin-bottom: 20px;">Top Cuisines</h2>
                     <div style="height: 300px; width: 100%; overflow-y: auto; overflow-x: hidden;">
-                        <div style="min-height: 500px; height: 100%;">
+                        <div style="min-height: 800px; height: 100%;">
                             <canvas id="cuisineChart"></canvas>
                         </div>
                     </div>
@@ -273,8 +273,9 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'bottom',
-                        labels: { padding: 20, boxWidth: 12 }
+                        position: 'right',
+                        align: 'start',
+                        labels: { padding: 15, boxWidth: 12 }
                     }
                 },
                 cutout: '70%'
