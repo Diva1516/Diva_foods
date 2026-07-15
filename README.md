@@ -20,12 +20,12 @@
 
 The application goes beyond standard CRUD operations by implementing real-time cart management, secure password hashing (BCrypt), dynamic dashboards, and a sleek, modern UI built from scratch with responsive CSS and vanilla JavaScript.
 
-### 🌟 Key Features
+### ✨ Key Features
 
 *   **🔒 Secure Authentication:** BCrypt password hashing and robust session management across all user roles.
 *   **🛒 Interactive Cart System:** AJAX-powered shopping cart for real-time quantity updates without page reloads.
 *   **💳 Secure Checkout Flow:** End-to-end checkout processing with detailed order histories and dynamic 15-minute cancellation policies.
-*   **📱 Responsive & Modern UI:** A premium, glassmorphism-inspired design with smooth micro-animations.
+*   **✨ Responsive & Modern UI:** A premium, glassmorphism-inspired design with smooth 3D micro-animations and glowing light themes.
 
 ---
 
@@ -57,7 +57,23 @@ The platform supports four distinct user roles, each with custom dashboards and 
 
 ---
 
-## 🛠️ Technology Stack
+## 📸 Application Screenshots
+
+*(To display your stunning UI here, simply take screenshots of your app, save them in the `screenshots/` folder in this repository, and name them exactly as listed below! GitHub will automatically render them into this grid.)*
+
+| Login Screen | Bangalore Restaurants |
+| :---: | :---: |
+| <img src="screenshots/login.png" width="450" alt="Login Page"> | <img src="screenshots/home.png" width="450" alt="Home Page"> |
+| **Name file:** `login.png` | **Name file:** `home.png` |
+
+| Shopping Cart | User Dashboard |
+| :---: | :---: |
+| <img src="screenshots/cart.png" width="450" alt="Cart"> | <img src="screenshots/dashboard.png" width="450" alt="Dashboard"> |
+| **Name file:** `cart.png` | **Name file:** `dashboard.png` |
+
+---
+
+## 🚀 Technology Stack
 
 *   **Backend:** Java 11+, Jakarta EE (Servlets & JSP)
 *   **Frontend:** HTML5, CSS3, Vanilla JavaScript
@@ -68,7 +84,7 @@ The platform supports four distinct user roles, each with custom dashboards and 
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Getting Started
 
 To run this project locally, follow these steps:
 
@@ -97,12 +113,6 @@ To run this project locally, follow these steps:
 
 4. **Access the Application**
    * Open your browser and navigate to: `http://localhost:8080/Diva_Foods/`
-
----
-
-## 📸 Application Screenshots
-
-*(Screenshots can be added here to showcase the stunning UI!)*
 
 ---
 
