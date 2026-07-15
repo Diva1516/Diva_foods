@@ -87,7 +87,7 @@
                         <div style="flex: 0 0 220px; padding-bottom: 10px;">
                             <canvas id="cuisineChart"></canvas>
                         </div>
-                        <div id="custom-legend" style="flex: 1; overflow-y: auto; overflow-x: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 10px 20px; border-top: 1px solid var(--border);"></div>
+                        <div id="custom-legend" style="flex: 1; overflow-y: auto; overflow-x: hidden; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 10px 20px; border-top: 1px solid var(--border);"></div>
                     </div>
                 </div>
             </div>
@@ -291,7 +291,7 @@
             item.style.display = 'flex';
             item.style.alignItems = 'center';
             item.style.fontSize = '0.9rem';
-            item.innerHTML = '<span style="display:inline-block; min-width:14px; height:14px; background-color:' + color + '; margin-right:10px; border-radius:3px;"></span> <span class="legend-text" style="color: ' + colors.text + '; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + label + '</span>';
+            item.innerHTML = '<span style="display:inline-block; min-width:14px; height:14px; background-color:' + color + '; margin-right:10px; border-radius:3px; flex-shrink: 0;"></span> <span class="legend-text" style="color: ' + colors.text + '; line-height: 1.4;">' + label + '</span>';
             legendContainer.appendChild(item);
         });
 
