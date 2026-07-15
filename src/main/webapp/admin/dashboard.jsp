@@ -273,9 +273,8 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'right',
-                        align: 'start',
-                        labels: { padding: 15, boxWidth: 12 }
+                        position: 'bottom',
+                        labels: { padding: 20, boxWidth: 12 }
                     }
                 },
                 cutout: '70%'
