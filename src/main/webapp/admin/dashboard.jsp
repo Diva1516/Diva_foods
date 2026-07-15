@@ -75,7 +75,7 @@
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
                 <div class="table-card" style="margin-bottom: 0;">
                     <h2 style="margin-top: 0; margin-bottom: 20px;">Revenue & Orders (Last 7 Days)</h2>
-                    <div style="height: 300px; width: 100%; overflow-x: auto; overflow-y: hidden;">
+                    <div style="height: 400px; width: 100%; overflow-x: auto; overflow-y: hidden;">
                         <div style="height: 100%; min-width: 1200px;">
                             <canvas id="revenueChart"></canvas>
                         </div>
@@ -83,11 +83,11 @@
                 </div>
                 <div class="table-card" style="margin-bottom: 0;">
                     <h2 style="margin-top: 0; margin-bottom: 20px;">Top Cuisines</h2>
-                    <div style="height: 300px; width: 100%; overflow-y: auto; overflow-x: hidden;">
-                        <div style="min-height: 250px; height: 250px;">
+                    <div style="display: flex; flex-direction: column; height: 400px; width: 100%;">
+                        <div style="flex: 0 0 220px; padding-bottom: 10px;">
                             <canvas id="cuisineChart"></canvas>
                         </div>
-                        <div id="custom-legend" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 10px 20px;"></div>
+                        <div id="custom-legend" style="flex: 1; overflow-y: auto; overflow-x: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 10px 20px; border-top: 1px solid var(--border);"></div>
                     </div>
                 </div>
             </div>
