@@ -84,9 +84,10 @@
                 <div class="table-card" style="margin-bottom: 0;">
                     <h2 style="margin-top: 0; margin-bottom: 20px;">Top Cuisines</h2>
                     <div style="height: 300px; width: 100%; overflow-y: auto; overflow-x: hidden;">
-                        <div style="min-height: 800px; height: 100%;">
+                        <div style="min-height: 250px; height: 250px;">
                             <canvas id="cuisineChart"></canvas>
                         </div>
+                        <div id="custom-legend" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 10px 20px;"></div>
                     </div>
                 </div>
             </div>
@@ -249,6 +250,14 @@
             }
         });
 
+        const bgColors = [
+            '#ff6b35',
+            '#28a745',
+            '#007bff',
+            '#ffc107',
+            '#17a2b8'
+        ];
+
         // Dishes Doughnut Chart
         const cuiCtx = document.getElementById('cuisineChart').getContext('2d');
         const cuiChart = new Chart(cuiCtx, {
@@ -257,13 +266,7 @@
                 labels: cuiLabels,
                 datasets: [{
                     data: cuiData,
-                    backgroundColor: [
-                        '#ff6b35',
-                        '#28a745',
-                        '#007bff',
-                        '#ffc107',
-                        '#17a2b8'
-                    ],
+                    backgroundColor: bgColors,
                     borderWidth: 0,
                     hoverOffset: 4
                 }]
@@ -273,12 +276,23 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'bottom',
-                        labels: { padding: 20, boxWidth: 12 }
+                        display: false
                     }
                 },
                 cutout: '70%'
             }
+        });
+
+        // Generate Custom HTML Legend for perfect grid alignment
+        const legendContainer = document.getElementById('custom-legend');
+        cuiLabels.forEach((label, index) => {
+            const color = bgColors[index % bgColors.length];
+            const item = document.createElement('div');
+            item.style.display = 'flex';
+            item.style.alignItems = 'center';
+            item.style.fontSize = '0.9rem';
+            item.innerHTML = `<span style="display:inline-block; min-width:14px; height:14px; background-color:${color}; margin-right:10px; border-radius:3px;"></span> <span class="legend-text" style="color: ${colors.text}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${label}</span>`;
+            legendContainer.appendChild(item);
         });
 
         // Listen for theme toggle events from app.js to instantly update charts
@@ -296,9 +310,13 @@
             }
             // Update Doughnut Chart
             if(cuiChart) {
-                cuiChart.options.plugins.legend.labels.color = newColors.text;
                 cuiChart.update();
             }
+            
+            // Update Custom Legend Text Colors
+            document.querySelectorAll('.legend-text').forEach(el => {
+                el.style.color = newColors.text;
+            });
         });
     </script>
 </body>
