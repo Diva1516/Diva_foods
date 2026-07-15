@@ -23,13 +23,8 @@
 </head>
 <body>
     <main class="auth-page white-theme">
-        <!-- Animated White Background with Floating Foods -->
-        <div class="auth-bg-white">
-            <img src="images/burger.png" alt="Burger" class="float-food food-1">
-            <img src="images/french_fries.png" alt="Fries" class="float-food food-2">
-            <img src="images/coke.png" alt="Coke" class="float-food food-3">
-            <img src="images/pizza.png" alt="Pizza" class="float-food food-4" onerror="this.src='images/dosa.png'">
-        </div>
+        <!-- Animated White Background Image -->
+        <div class="auth-bg-white-animated"></div>
 
         <div class="auth-card glass-light">
             <div class="auth-header">
