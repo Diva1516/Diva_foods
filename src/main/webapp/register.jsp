@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
-    <main class="auth-page">
-        <!-- 3D Preview Image Background -->
-        <div class="auth-bg-image"></div>
+    <main class="auth-page white-theme">
+        <!-- Animated White Background Image -->
+        <div class="auth-bg-white-animated"></div>
 
-        <div class="auth-card">
+        <div class="auth-card glass-light">
             <div class="auth-header">
                 <h1 class="brand-text" style="font-size: 2.5rem; margin-bottom: 15px; display: inline-block;">Diva Foods</h1>
                 <p>Register to order food in minutes</p>
