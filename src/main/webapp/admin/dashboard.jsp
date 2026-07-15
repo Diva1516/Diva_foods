@@ -291,7 +291,7 @@
             item.style.display = 'flex';
             item.style.alignItems = 'center';
             item.style.fontSize = '0.9rem';
-            item.innerHTML = `<span style="display:inline-block; min-width:14px; height:14px; background-color:${color}; margin-right:10px; border-radius:3px;"></span> <span class="legend-text" style="color: ${colors.text}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${label}</span>`;
+            item.innerHTML = '<span style="display:inline-block; min-width:14px; height:14px; background-color:' + color + '; margin-right:10px; border-radius:3px;"></span> <span class="legend-text" style="color: ' + colors.text + '; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + label + '</span>';
             legendContainer.appendChild(item);
         });
 
