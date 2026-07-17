@@ -27,7 +27,17 @@ public class DBConnection {
 
             if (envUrl != null && !envUrl.isEmpty()) {
                 // Running on Railway - use cloud database
-                url = envUrl;
+                // Railway provides mysql:// but JDBC requires jdbc:mysql://
+                if (envUrl.startsWith("mysql://")) {
+                    // Convert mysql://user:pass@host:port/db to jdbc:mysql://host:port/db
+                    // We strip out the credentials from the URL because we pass them explicitly
+                    String cleanUrl = envUrl.substring(envUrl.indexOf("@") + 1);
+                    url = "jdbc:mysql://" + cleanUrl;
+                } else if (!envUrl.startsWith("jdbc:")) {
+                    url = "jdbc:" + envUrl;
+                } else {
+                    url = envUrl;
+                }
                 user = envUser;
                 pass = envPass;
             } else {
