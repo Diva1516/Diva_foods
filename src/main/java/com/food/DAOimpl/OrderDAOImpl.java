@@ -14,15 +14,15 @@ import com.food.model.Order;
 import com.food.utility.DBConnection;
 
 public class OrderDAOImpl implements OrderDAO {
-    private static final String INSERT_QUERY = "INSERT INTO OrderTable (UserID, RestaurantID, OrderDate, TotalAmount, Status, PaymentMethod, DeliveryAgentID) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_QUERY = "SELECT * FROM OrderTable WHERE OrderID = ?";
-    private static final String UPDATE_QUERY = "UPDATE OrderTable SET UserID = ?, RestaurantID = ?, OrderDate = ?, TotalAmount = ?, Status = ?, PaymentMethod = ?, DeliveryAgentID = ? WHERE OrderID = ?";
-    private static final String DELETE_QUERY = "DELETE FROM OrderTable WHERE OrderID = ?";
-    private static final String GET_ALL_QUERY = "SELECT * FROM OrderTable";
-    private static final String GET_BY_USER_QUERY = "SELECT * FROM OrderTable WHERE UserID = ? ORDER BY OrderDate DESC";
-    private static final String GET_BY_RESTAURANT_QUERY = "SELECT * FROM OrderTable WHERE RestaurantID = ? ORDER BY OrderDate DESC";
-    private static final String GET_PENDING_QUERY = "SELECT * FROM OrderTable WHERE Status IN ('pending', 'preparing') AND DeliveryAgentID IS NULL ORDER BY OrderDate ASC";
-    private static final String GET_BY_AGENT_QUERY = "SELECT * FROM OrderTable WHERE DeliveryAgentID = ? ORDER BY OrderDate DESC";
+    private static final String INSERT_QUERY = "INSERT INTO ordertable (UserID, RestaurantID, OrderDate, TotalAmount, Status, PaymentMethod, DeliveryAgentID) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT * FROM ordertable WHERE OrderID = ?";
+    private static final String UPDATE_QUERY = "UPDATE ordertable SET UserID = ?, RestaurantID = ?, OrderDate = ?, TotalAmount = ?, Status = ?, PaymentMethod = ?, DeliveryAgentID = ? WHERE OrderID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM ordertable WHERE OrderID = ?";
+    private static final String GET_ALL_QUERY = "SELECT * FROM ordertable";
+    private static final String GET_BY_USER_QUERY = "SELECT * FROM ordertable WHERE UserID = ? ORDER BY OrderDate DESC";
+    private static final String GET_BY_RESTAURANT_QUERY = "SELECT * FROM ordertable WHERE RestaurantID = ? ORDER BY OrderDate DESC";
+    private static final String GET_PENDING_QUERY = "SELECT * FROM ordertable WHERE Status IN ('pending', 'preparing') AND DeliveryAgentID IS NULL ORDER BY OrderDate ASC";
+    private static final String GET_BY_AGENT_QUERY = "SELECT * FROM ordertable WHERE DeliveryAgentID = ? ORDER BY OrderDate DESC";
 
     @Override
     public int addOrder(Order order) {
@@ -201,7 +201,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public void updateOrderStatus(int orderId, String status) {
-        String query = "UPDATE OrderTable SET Status = ? WHERE OrderID = ?";
+        String query = "UPDATE ordertable SET Status = ? WHERE OrderID = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             pstmt.setString(1, status);

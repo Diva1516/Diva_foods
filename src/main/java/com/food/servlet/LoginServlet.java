@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 
     private User findUserByLoginId(String loginId) {
         User user = null;
-        String sql = "SELECT * FROM User WHERE Email = ? OR Username = ? OR PhoneNumber = ?";
+        String sql = "SELECT * FROM user WHERE Email = ? OR Username = ? OR PhoneNumber = ?";
         try (java.sql.Connection conn = com.food.utility.DBConnection.getConnection();
              java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, loginId);

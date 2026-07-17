@@ -14,16 +14,16 @@ import com.food.model.User;
 import com.food.utility.DBConnection;
 
 public class UserDAOImpl implements UserDAO {
-     private static final String INSERT_QUERY = "INSERT INTO User (Username, Email, Password, ConfirmPassword, Address, PhoneNumber, Role, CreatedDate, LastLoginDate, TotalEarnings) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-     private static final String GET_QUERY = "SELECT * FROM User WHERE UserID = ?";
-     private static final String UPDATE_USER = "UPDATE User SET Username = ?, Email = ?, Password = ?, Address = ?, PhoneNumber = ?, LastLoginDate = ? WHERE UserID = ?";
-     private static final String DELETE_USER = "DELETE FROM User WHERE UserID = ?";
-     private static final String GET_ALL_USER = "SELECT * FROM User";
+     private static final String INSERT_QUERY = "INSERT INTO user (Username, Email, Password, ConfirmPassword, Address, PhoneNumber, Role, CreatedDate, LastLoginDate, TotalEarnings) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+     private static final String GET_QUERY = "SELECT * FROM user WHERE UserID = ?";
+     private static final String UPDATE_USER = "UPDATE user SET Username = ?, Email = ?, Password = ?, Address = ?, PhoneNumber = ?, LastLoginDate = ? WHERE UserID = ?";
+     private static final String DELETE_USER = "DELETE FROM user WHERE UserID = ?";
+     private static final String GET_ALL_USER = "SELECT * FROM user";
 
      @Override
      public User getUserByUsername(String username) {
         User user = null;
-        String sql = "SELECT * FROM User WHERE Username = ?";
+        String sql = "SELECT * FROM user WHERE Username = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, username);
@@ -41,7 +41,7 @@ public class UserDAOImpl implements UserDAO {
      @Override
      public User getUserByEmail(String email) {
         User user = null;
-        String sql = "SELECT * FROM User WHERE Email = ?";
+        String sql = "SELECT * FROM user WHERE Email = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, email);
@@ -98,7 +98,7 @@ public class UserDAOImpl implements UserDAO {
      @Override
      public void updateUser(User user) {
          try (Connection connection = DBConnection.getConnection();
-              PreparedStatement pstmt = connection.prepareStatement("UPDATE User SET Username = ?, Email = ?, Password = ?, ConfirmPassword = ?, Address = ?, PhoneNumber = ?, LastLoginDate = ?, TotalEarnings = ? WHERE UserID = ?")) {
+              PreparedStatement pstmt = connection.prepareStatement("UPDATE user SET Username = ?, Email = ?, Password = ?, ConfirmPassword = ?, Address = ?, PhoneNumber = ?, LastLoginDate = ?, TotalEarnings = ? WHERE UserID = ?")) {
              pstmt.setString(1, user.getUserName());
              pstmt.setString(2, user.getEmail());
              pstmt.setString(3, user.getPassword());

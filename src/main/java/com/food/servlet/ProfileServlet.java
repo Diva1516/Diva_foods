@@ -40,7 +40,7 @@ public class ProfileServlet extends HttpServlet {
             address = user.getAddress();
         }
 
-        // Update User object values
+        // Update user object values
         user.setUserName(username);
         user.setAddress(address);
         if (phoneNumber != null && !phoneNumber.trim().isEmpty()) {

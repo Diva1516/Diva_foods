@@ -38,8 +38,8 @@ public class SearchServlet extends HttpServlet {
 
         String wildcard = "%" + searchString + "%";
 
-        String restQuery = "SELECT * FROM Restaurant WHERE Name LIKE ? OR CuisineType LIKE ?";
-        String menuQuery = "SELECT * FROM Menu WHERE ItemName LIKE ? OR Description LIKE ?";
+        String restQuery = "SELECT * FROM restaurant WHERE Name LIKE ? OR CuisineType LIKE ?";
+        String menuQuery = "SELECT * FROM menu WHERE ItemName LIKE ? OR Description LIKE ?";
 
         try (Connection conn = DBConnection.getConnection()) {
             // 1. Fetch matching restaurants

@@ -14,12 +14,12 @@ import com.food.model.OrderHistory;
 import com.food.utility.DBConnection;
 
 public class OrderHistoryDAOImpl implements OrderHistoryDAO {
-    private static final String INSERT_QUERY = "INSERT INTO OrderHistory (OrderID, UserID, OrderDate, TotalAmount, Status) VALUES (?, ?, ?, ?, ?)";
-    private static final String GET_QUERY = "SELECT * FROM OrderHistory WHERE OrderHistoryID = ?";
-    private static final String UPDATE_QUERY = "UPDATE OrderHistory SET OrderID = ?, UserID = ?, OrderDate = ?, TotalAmount = ?, Status = ? WHERE OrderHistoryID = ?";
-    private static final String DELETE_QUERY = "DELETE FROM OrderHistory WHERE OrderHistoryID = ?";
-    private static final String GET_ALL_QUERY = "SELECT * FROM OrderHistory";
-    private static final String GET_BY_USER_QUERY = "SELECT * FROM OrderHistory WHERE UserID = ?";
+    private static final String INSERT_QUERY = "INSERT INTO orderhistory (OrderID, UserID, OrderDate, TotalAmount, Status) VALUES (?, ?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT * FROM orderhistory WHERE OrderHistoryID = ?";
+    private static final String UPDATE_QUERY = "UPDATE orderhistory SET OrderID = ?, UserID = ?, OrderDate = ?, TotalAmount = ?, Status = ? WHERE OrderHistoryID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM orderhistory WHERE OrderHistoryID = ?";
+    private static final String GET_ALL_QUERY = "SELECT * FROM orderhistory";
+    private static final String GET_BY_USER_QUERY = "SELECT * FROM orderhistory WHERE UserID = ?";
 
     @Override
     public void addOrderHistory(OrderHistory orderHistory) {

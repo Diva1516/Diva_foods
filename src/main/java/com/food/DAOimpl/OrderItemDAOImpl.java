@@ -13,12 +13,12 @@ import com.food.model.OrderItem;
 import com.food.utility.DBConnection;
 
 public class OrderItemDAOImpl implements OrderItemDAO {
-    private static final String INSERT_QUERY = "INSERT INTO OrderItem (OrderID, MenuID, Quantity, ItemTotal) VALUES (?, ?, ?, ?)";
-    private static final String GET_QUERY = "SELECT * FROM OrderItem WHERE OrderItemID = ?";
-    private static final String UPDATE_QUERY = "UPDATE OrderItem SET OrderID = ?, MenuID = ?, Quantity = ?, ItemTotal = ? WHERE OrderItemID = ?";
-    private static final String DELETE_QUERY = "DELETE FROM OrderItem WHERE OrderItemID = ?";
-    private static final String GET_ALL_QUERY = "SELECT * FROM OrderItem";
-    private static final String GET_BY_ORDER_QUERY = "SELECT * FROM OrderItem WHERE OrderID = ?";
+    private static final String INSERT_QUERY = "INSERT INTO orderitem (OrderID, MenuID, Quantity, ItemTotal) VALUES (?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT * FROM orderitem WHERE OrderItemID = ?";
+    private static final String UPDATE_QUERY = "UPDATE orderitem SET OrderID = ?, MenuID = ?, Quantity = ?, ItemTotal = ? WHERE OrderItemID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM orderitem WHERE OrderItemID = ?";
+    private static final String GET_ALL_QUERY = "SELECT * FROM orderitem";
+    private static final String GET_BY_ORDER_QUERY = "SELECT * FROM orderitem WHERE OrderID = ?";
 
     @Override
     public void addOrderItem(OrderItem orderItem) {

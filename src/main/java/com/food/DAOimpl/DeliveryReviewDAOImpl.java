@@ -13,7 +13,7 @@ import com.food.utility.DBConnection;
 public class DeliveryReviewDAOImpl {
 
     public boolean addReview(DeliveryReview review) {
-        String query = "INSERT INTO DeliveryReview (OrderID, CustomerID, AgentID, Rating, Comments) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO deliveryreview (OrderID, CustomerID, AgentID, Rating, Comments) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             
@@ -32,7 +32,7 @@ public class DeliveryReviewDAOImpl {
 
     public List<DeliveryReview> getReviewsByAgent(int agentId) {
         List<DeliveryReview> reviews = new ArrayList<>();
-        String query = "SELECT * FROM DeliveryReview WHERE AgentID = ? ORDER BY ReviewDate DESC";
+        String query = "SELECT * FROM deliveryreview WHERE AgentID = ? ORDER BY ReviewDate DESC";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             
@@ -57,7 +57,7 @@ public class DeliveryReviewDAOImpl {
     }
     
     public double getAverageRating(int agentId) {
-        String query = "SELECT AVG(Rating) as avgRating FROM DeliveryReview WHERE AgentID = ?";
+        String query = "SELECT AVG(Rating) as avgRating FROM deliveryreview WHERE AgentID = ?";
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement pstmt = connection.prepareStatement(query)) {
             

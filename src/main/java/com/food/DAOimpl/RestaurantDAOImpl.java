@@ -13,11 +13,11 @@ import com.food.model.Restaurant;
 import com.food.utility.DBConnection;
 
 public class RestaurantDAOImpl implements RestaurantDAO {
-    private static final String INSERT_QUERY = "INSERT INTO Restaurant (Name, CuisineType, DeliveryTime, Address, AdminUserID, Rating, IsActive, ImagePath) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_QUERY = "SELECT * FROM Restaurant WHERE RestaurantID = ?";
-    private static final String UPDATE_QUERY = "UPDATE Restaurant SET Name = ?, CuisineType = ?, DeliveryTime = ?, Address = ?, AdminUserID = ?, Rating = ?, IsActive = ?, ImagePath = ? WHERE RestaurantID = ?";
-    private static final String DELETE_QUERY = "DELETE FROM Restaurant WHERE RestaurantID = ?";
-    private static final String GET_ALL_QUERY = "SELECT * FROM Restaurant";
+    private static final String INSERT_QUERY = "INSERT INTO restaurant (Name, CuisineType, DeliveryTime, Address, AdminUserID, Rating, IsActive, ImagePath) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT * FROM restaurant WHERE RestaurantID = ?";
+    private static final String UPDATE_QUERY = "UPDATE restaurant SET Name = ?, CuisineType = ?, DeliveryTime = ?, Address = ?, AdminUserID = ?, Rating = ?, IsActive = ?, ImagePath = ? WHERE RestaurantID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM restaurant WHERE RestaurantID = ?";
+    private static final String GET_ALL_QUERY = "SELECT * FROM restaurant";
 
     @Override
     public void addRestaurant(Restaurant restaurant) {

@@ -13,12 +13,12 @@ import com.food.model.Menu;
 import com.food.utility.DBConnection;
 
 public class MenuDAOImpl implements MenuDAO {
-    private static final String INSERT_QUERY = "INSERT INTO Menu (RestaurantID, ItemName, Description, Price, IsAvailable, ImagePath) VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String GET_QUERY = "SELECT * FROM Menu WHERE MenuID = ?";
-    private static final String UPDATE_QUERY = "UPDATE Menu SET RestaurantID = ?, ItemName = ?, Description = ?, Price = ?, IsAvailable = ?, ImagePath = ? WHERE MenuID = ?";
-    private static final String DELETE_QUERY = "DELETE FROM Menu WHERE MenuID = ?";
-    private static final String GET_ALL_QUERY = "SELECT * FROM Menu";
-    private static final String GET_BY_RESTAURANT_QUERY = "SELECT * FROM Menu WHERE RestaurantID = ?";
+    private static final String INSERT_QUERY = "INSERT INTO menu (RestaurantID, ItemName, Description, Price, IsAvailable, ImagePath) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String GET_QUERY = "SELECT * FROM menu WHERE MenuID = ?";
+    private static final String UPDATE_QUERY = "UPDATE menu SET RestaurantID = ?, ItemName = ?, Description = ?, Price = ?, IsAvailable = ?, ImagePath = ? WHERE MenuID = ?";
+    private static final String DELETE_QUERY = "DELETE FROM menu WHERE MenuID = ?";
+    private static final String GET_ALL_QUERY = "SELECT * FROM menu";
+    private static final String GET_BY_RESTAURANT_QUERY = "SELECT * FROM menu WHERE RestaurantID = ?";
 
     @Override
     public void addMenu(Menu menu) {
