@@ -41,9 +41,10 @@ public class DBConnection {
 
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException("JDBC Driver not found: " + e.getMessage(), e);
         } catch (SQLException e) {
-            e.printStackTrace();
+            String debugUrl = "jdbc:mysql://" + System.getenv("MYSQLHOST") + ":" + System.getenv("MYSQLPORT") + "/railway";
+            throw new RuntimeException("DB Connection Failed! URL: [" + debugUrl + "] User: [" + System.getenv("MYSQLUSER") + "] Error: " + e.getMessage(), e);
         }
         return connection;
     }
