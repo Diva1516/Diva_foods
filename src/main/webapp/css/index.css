@@ -235,3 +235,19 @@ html[data-theme='dark'] .floating-food {
 .ff-4 { font-size: 120px; bottom: 10%; left: 8%; animation: floatRotate 6.5s infinite alternate; }
 .ff-5 { font-size: 60px; top: 50%; left: 20%; animation: floatUpDown 4s infinite alternate; filter: blur(2px); opacity: 0.8;}
 .ff-6 { font-size: 50px; top: 45%; right: 20%; animation: floatRotate 4.5s infinite alternate; filter: blur(2px); opacity: 0.8;}
+
+/* ---------- RESPONSIVE (Added) ---------- */
+@media (max-width: 1024px) {
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-stats {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-food {
+        display: none;
+    }
+}

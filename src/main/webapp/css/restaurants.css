@@ -298,3 +298,14 @@ html[data-theme='dark'] .floating-food {
         justify-content: center;
     }
 }
+
+/* ---------- RESPONSIVE (Added) ---------- */
+@media (max-width: 768px) {
+    .floating-food {
+        display: none;
+    }
+    .filter-chip {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}

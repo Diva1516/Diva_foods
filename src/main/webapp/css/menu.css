@@ -143,3 +143,20 @@
         text-align: center;
     }
 }
+
+/* ---------- RESPONSIVE (Added) ---------- */
+@media (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        flex-direction: column;
+    }
+    .menu-item .item-image {
+        width: 100%;
+        height: 160px;
+    }
+}

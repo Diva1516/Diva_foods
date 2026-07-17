@@ -208,3 +208,14 @@
         height: 160px;
     }
 }
+
+/* ---------- RESPONSIVE (Added) ---------- */
+@media (max-width: 768px) {
+    .cart-summary {
+        padding: 20px;
+    }
+    .cart-item .item-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
