@@ -150,8 +150,21 @@ select option {
 .badge-owner { background: rgba(255, 193, 7, 0.15); color: #ffc107; }
 .badge-delivery { background: rgba(23, 162, 184, 0.15); color: #17a2b8; }
 
+/* --- Dashboard Layout Fixes --- */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+.bar-chart-container {
+    min-width: 1200px;
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
     .admin-layout {
         grid-template-columns: 1fr;
     }
@@ -190,6 +203,9 @@ select option {
     }
     .stats-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .bar-chart-container {
+        min-width: unset;
     }
 }
 

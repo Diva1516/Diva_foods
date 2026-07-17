@@ -72,11 +72,11 @@
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
+            <div class="charts-grid" style="margin-bottom: 32px;">
                 <div class="table-card" style="margin-bottom: 0;">
                     <h2 style="margin-top: 0; margin-bottom: 20px;">Revenue & Orders (Last 7 Days)</h2>
                     <div style="height: 400px; width: 100%; overflow-x: auto; overflow-y: hidden;">
-                        <div style="height: 100%; min-width: 1200px;">
+                        <div class="bar-chart-container" style="height: 100%;">
                             <canvas id="revenueChart"></canvas>
                         </div>
                     </div>
