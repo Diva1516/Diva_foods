@@ -15,7 +15,7 @@ COPY src/main/webapp/ /usr/local/tomcat/webapps/ROOT/
 COPY src/main/java/ /app/src/main/java/
 # Find all .java files and compile them into /app/build/classes
 RUN find /app/src/main/java -name "*.java" > sources.txt && \
-    javac -cp "/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/*" -d /app/build/classes @sources.txt
+    javac -cp "/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/*:/usr/local/tomcat/lib/*" -d /app/build/classes @sources.txt
 
 # Copy the newly compiled classes to Tomcat
 RUN cp -r /app/build/classes/* /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/
